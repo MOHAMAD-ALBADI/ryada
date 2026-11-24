@@ -1,0 +1,24 @@
+name: Import site files
+on:
+  push:
+    paths: [".github/workflows/import.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and unpack
+        run: |
+          curl -fsSL "https://script.google.com/macros/s/AKfycbyscmNk9x67bfg3djrkqB5DJv4XUanOrOSgJUUjCFhz91dlmC8vxsXEbrtMLVD7pHDwfA/exec?raw=bundle" -o /tmp/b.txt
+          python3 -c "import json,base64,gzip,os; d=json.loads(gzip.decompress(base64.b64decode(open('/tmp/b.txt').read()))); [(os.makedirs(os.path.dirname(p) or '.',exist_ok=True), open(p,'wb').write(base64.b64decode(c))) for p,c in d.items()]"
+          ls -laR index.html README.md backend docs
+      - name: Commit
+        run: |
+          git config user.name "MOHAMAD-ALBADI"
+          git config user.email "MOHAMAD-ALBADI@users.noreply.github.com"
+          git add index.html README.md backend docs
+          git commit -m "Add Entrepreneurship Day registration platform"
+          git push
