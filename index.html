@@ -330,6 +330,61 @@ body.print-mode .print-view { display: block; padding: 24px; }
   body.print-mode .print-view { padding: 0; }
   .print-card { max-width: none; width: 180mm; height: auto; border: 0.3mm dashed #bbb; margin: 0 auto 5mm; break-inside: avoid; page-break-inside: avoid; }
 }
+
+/* ===== الورشة ===== */
+.choice-workshop::before { background: linear-gradient(90deg, var(--blue), var(--navy)); }
+.choice-workshop .choice-icon { background: var(--blue-50); }
+.choice-workshop .choice-icon svg { stroke: var(--blue-600); }
+.choice-workshop .choice-cta { background: var(--navy); }
+.ws-hero { position: relative; padding: 24px 24px 20px; margin: 4px 0 20px; border-radius: 18px; background: linear-gradient(135deg, var(--navy-700), var(--navy) 60%, #2f5a72); color: #fff; overflow: hidden; }
+.ws-hero::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, var(--gold), #e7d3a6, var(--gold)); }
+.ws-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; background: rgba(194,167,114,.16); color: #ead7ab; font-size: 13px; font-weight: 600; border: 1px solid rgba(194,167,114,.45); }
+.ws-hero h2 { margin: 12px 0 4px; font-size: 27px; line-height: 1.35; color: #fff; }
+.ws-sub { margin: 0; color: #cfe0ea; font-size: 16.5px; line-height: 1.6; }
+.ws-meta { list-style: none; padding: 0; margin: 18px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.ws-meta li { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.13); border-radius: 12px; padding: 10px 12px; }
+.ws-meta small { display: block; font-size: 12px; color: #a9c3d3; line-height: 1.5; }
+.ws-meta strong { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.5; }
+.ws-about p { margin: 0 0 10px; color: var(--ink-2); font-size: 15.5px; line-height: 1.85; }
+.ws-more summary { cursor: pointer; color: var(--blue-600); font-weight: 600; margin: 2px 0 8px; list-style-position: inside; }
+.ws-for { display: inline-block; padding: 8px 14px; border-radius: 10px; background: var(--gold-50); color: #7a6337 !important; font-weight: 500; }
+.ws-form-title { margin: 22px 0 14px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 19px; color: var(--ink); }
+.form-error.is-info { color: #2f5d45; background: #edf5f0; border: 1px solid #d3e7da; padding: 12px 14px; border-radius: 12px; font-weight: 600; }
+.seat { margin: 22px auto 0; display: inline-flex; flex-direction: column; align-items: center; padding: 16px 44px; border-radius: 18px; background: linear-gradient(135deg, var(--navy-700), var(--navy)); color: #fff; box-shadow: var(--shadow-lg); border: 1px solid rgba(194,167,114,.5); }
+.seat small { color: #cfe0ea; font-size: 14px; }
+.seat strong { font-size: 46px; letter-spacing: 3px; font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; color: #ead7ab; line-height: 1.25; }
+.ws-ticket { margin: 20px auto 0; max-width: 470px; text-align: right; border: 1.5px dashed #cdd9e0; border-radius: 14px; padding: 4px 18px; background: var(--blue-50); }
+.ws-ticket div { padding: 10px 0; border-bottom: 1px solid #dbe5ec; }
+.ws-ticket div:last-child { border-bottom: 0; }
+.ws-ticket small { display: block; color: var(--muted); font-size: 12.5px; }
+.ws-ticket strong { font-size: 15px; color: var(--ink); line-height: 1.6; }
+.ws-admin { display: none; }
+body.ws-mode > *:not(.ws-admin) { display: none !important; }
+body.ws-mode .ws-admin { display: block; padding: 24px; max-width: 1240px; margin: 0 auto; }
+.wa-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.wa-head h1 { margin: 0; font-size: 26px; color: var(--navy); }
+.wa-head p { margin: 2px 0 0; color: var(--muted); }
+.wa-count { display: flex; flex-direction: column; align-items: center; padding: 10px 26px; border-radius: 16px; background: var(--navy); color: #fff; }
+.wa-count strong { font-size: 32px; line-height: 1.1; color: #ead7ab; }
+.wa-count small { color: #cfe0ea; }
+.wa-tools { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+.wa-tools input { flex: 1 1 260px; min-width: 0; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); font: inherit; background: #fff; }
+.wa-tools .btn { text-decoration: none; }
+.wa-table-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); }
+.wa-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.wa-table th { position: sticky; top: 0; background: var(--navy); color: #fff; font-weight: 600; text-align: right; padding: 12px 14px; white-space: nowrap; }
+.wa-table td { padding: 11px 14px; border-bottom: 1px solid #eeebe5; white-space: nowrap; }
+.wa-table tbody tr:nth-child(even) { background: #faf9f6; }
+.wa-table tbody tr:hover { background: var(--blue-50); }
+.wa-seat { font-family: ui-monospace, Menlo, monospace; font-weight: 700; color: var(--navy); }
+.wa-empty { text-align: center; color: var(--muted); padding: 24px; }
+@media (max-width: 560px) {
+  .ws-meta { grid-template-columns: 1fr 1fr; }
+  .ws-hero { padding: 20px 18px 18px; }
+  .ws-hero h2 { font-size: 22px; }
+  .seat strong { font-size: 38px; }
+  body.ws-mode .ws-admin { padding: 14px; }
+}
   </style>
 </head>
 <body>
@@ -373,8 +428,8 @@ body.print-mode .print-view { display: block; padding: 24px; }
 
       <div class="open-note"><span class="open-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>الحضور مفتوح للجميع</strong> ولا يحتاج إلى تسجيل. نراكم يوم الثلاثاء 1 ديسمبر.</span></div>
 
-      <h2 class="choose-title">لديك مشروع أو منتج أو خدمة؟</h2>
-      <div class="choices choices-single">
+      <h2 class="choose-title">اختر نوع التسجيل</h2>
+      <div class="choices">
         <a href="#project" class="choice choice-project" data-nav="project">
           <span class="choice-icon" aria-hidden="true">
             <svg viewBox="0 0 48 48"><path d="M6 18l3.5-9h29L42 18"/><path d="M6 18c0 3 2.4 5 5 5s5-2 5-5c0 3 2.4 5 5 5h6c2.6 0 5-2 5-5 0 3 2.4 5 5 5s5-2 5-5"/><path d="M9 23v16h30V23"/><path d="M19 39v-9h10v9"/></svg>
@@ -386,8 +441,19 @@ body.print-mode .print-view { display: block; padding: 24px; }
           </span>
           <span class="choice-cta">سجّل مشروعك <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></span>
         </a>
+        <a href="#workshop" class="choice choice-workshop" data-nav="workshop">
+          <span class="choice-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="24" rx="3"/><path d="M14 24l7-6 5 4 8-8"/><path d="M17 40l7-8 7 8"/></svg>
+          </span>
+          <span class="choice-body">
+            <span class="choice-kicker">ورشة تدريبية · يقدمها محمد البادي</span>
+            <span class="choice-title">من الفكرة إلى الشركة الناشئة</span>
+            <span class="choice-text">كيف تبني مشروعك الطلابي باستخدام الذكاء الاصطناعي؟ ورشة تفاعلية لمدة ساعتين لجميع الطلبة.</span>
+          </span>
+          <span class="choice-cta">سجّل في الورشة <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></span>
+        </a>
       </div>
-      <p class="note">التسجيل خاص بأصحاب المشاريع الراغبين بالعرض، ويستغرق أقل من دقيقة.</p>
+      <p class="note">التسجيل سريع ويستغرق أقل من دقيقة.</p>
     </section>
 
     <!-- ===== نموذج المشروع (خطوتان) ===== -->
@@ -478,6 +544,88 @@ body.print-mode .print-view { display: block; padding: 24px; }
       </div>
     </section>
 
+    <!-- ===== الورشة ===== -->
+    <section class="view" data-view="workshop" aria-labelledby="ws-title">
+      <div class="panel">
+        <button type="button" class="back" data-nav="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg> <span>رجوع</span></button>
+        <div class="ws-hero">
+          <span class="ws-badge">ورشة تدريبية</span>
+          <h2 id="ws-title">من الفكرة إلى الشركة الناشئة</h2>
+          <p class="ws-sub">كيف تبني مشروعك الطلابي باستخدام الذكاء الاصطناعي؟</p>
+          <ul class="ws-meta">
+            <li><small>مقدم الورشة</small><strong>محمد البادي</strong></li>
+            <li><small>التاريخ</small><strong>الثلاثاء 1 ديسمبر 2026</strong></li>
+            <li><small>المدة</small><strong>ساعتان</strong></li>
+            <li><small>المكان</small><strong>كلية البريمي الجامعية</strong></li>
+          </ul>
+        </div>
+        <div class="ws-about">
+          <p>ورشة تدريبية تفاعلية تعرّفك على كيفية تحويل الأفكار إلى مشاريع وشركات طلابية ناشئة، بالاستفادة من أدوات الذكاء الاصطناعي في ابتكار الأفكار، ودراسة احتياجات السوق، وتطوير نماذج الأعمال، وبناء النماذج الأولية، حتى دون خبرة برمجية أو رأس مال كبير.</p>
+          <details class="ws-more">
+            <summary>المزيد عن الورشة</summary>
+            <p>تتناول الورشة أساسيات التفكير الريادي، واكتشاف الفرص التجارية، وتحديد مصادر الدخل، واستثمار المواسم والاحتياجات السوقية في ابتكار مشاريع قابلة للتطبيق والنمو.</p>
+            <p>وترتبط المحاور بتجارب عملية واقعية، من بينها تجربة تطوير مشروع «طود – TAWD» باستخدام الذكاء الاصطناعي.</p>
+          </details>
+          <p class="ws-for">مناسبة لجميع الطلبة: المبتدئين وأصحاب المعرفة السابقة بالذكاء الاصطناعي وريادة الأعمال.</p>
+        </div>
+
+        <h3 class="ws-form-title">بيانات التسجيل</h3>
+        <form id="form-workshop" class="form" novalidate data-type="workshop">
+          <div class="field">
+            <label for="w-name">الاسم الكامل <span class="req">*</span></label>
+            <input id="w-name" name="full_name" type="text" autocomplete="name" maxlength="100" required placeholder="الاسم الكامل">
+            <p class="err" data-err="full_name"></p>
+          </div>
+          <div class="field">
+            <label for="w-sid">الرقم الجامعي <span class="req">*</span></label>
+            <input id="w-sid" name="student_id" type="text" inputmode="numeric" maxlength="20" autocomplete="off" required placeholder="مثال: 2025000123" dir="ltr">
+            <p class="err" data-err="student_id"></p>
+          </div>
+          <div class="field">
+            <label for="w-phone">رقم الهاتف أو الواتساب <span class="req">*</span></label>
+            <div class="phone">
+                <input id="w-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required placeholder="9XXXXXXX" dir="ltr">
+                <span class="cc" dir="ltr">+968</span>
+              </div>
+            <p class="err" data-err="phone"></p>
+          </div>
+          <div class="field">
+            <label for="w-email">البريد الإلكتروني <span class="req">*</span></label>
+            <input id="w-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required placeholder="name@example.com" dir="ltr">
+            <p class="err" data-err="email"></p>
+          </div>
+          <div class="field">
+            <label for="w-major">التخصص <span class="opt">(اختياري)</span></label>
+            <input id="w-major" name="major" type="text" maxlength="80" placeholder="مثال: إدارة الأعمال">
+            <p class="err" data-err="major"></p>
+          </div>
+          <div class="hp" aria-hidden="true"><label>اترك هذا الحقل فارغًا<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <p class="form-error" role="alert"></p>
+          <button type="submit" class="btn btn-primary btn-block"><span class="btn-label">سجّل في الورشة</span><span class="spinner" aria-hidden="true"></span></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== نجاح تسجيل الورشة ===== -->
+    <section class="view" data-view="ws-success" aria-live="polite">
+      <div class="panel success">
+        <div class="check" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></div>
+        <h2>تم تسجيلك بنجاح في الورشة!</h2>
+        <p class="success-text">نتطلع إلى لقائك. سنتواصل معك لتأكيد موعد الورشة ومكانها.</p>
+        <div class="seat"><small>رقم مقعدك</small><strong data-seat dir="ltr">—</strong></div>
+        <div class="ws-ticket">
+          <div><small>الورشة</small><strong>من الفكرة إلى الشركة الناشئة: كيف تبني مشروعك الطلابي باستخدام الذكاء الاصطناعي؟</strong></div>
+          <div><small>مقدم الورشة</small><strong>محمد البادي</strong></div>
+          <div><small>التاريخ</small><strong>الثلاثاء 1 ديسمبر 2026 · كلية البريمي الجامعية</strong></div>
+          <div><small>الاسم</small><strong data-ws-name></strong></div>
+        </div>
+        <button type="button" class="btn btn-gold btn-dl" data-copy-ws><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg> نسخ بيانات التأكيد</button>
+        <p class="ref-hint small" data-copy-msg></p>
+        <div class="success-facts"></div>
+        <button type="button" class="btn btn-ghost" data-nav="home">العودة للصفحة الرئيسية</button>
+      </div>
+    </section>
+
     <!-- ===== النجاح ===== -->
     <section class="view" data-view="success" aria-live="polite">
       <div class="panel success">
@@ -505,6 +653,30 @@ body.print-mode .print-view { display: block; padding: 24px; }
     <div data-print-list></div>
   </section>
 
+  <section class="ws-admin" aria-label="تسجيلات الورشة">
+    <div class="wa-head">
+      <div>
+        <h1>تسجيلات الورشة</h1>
+        <p>من الفكرة إلى الشركة الناشئة · الثلاثاء 1 ديسمبر 2026</p>
+      </div>
+      <div class="wa-count"><strong data-wa-count>0</strong><small>مسجّل</small></div>
+    </div>
+    <div class="wa-tools">
+      <input type="search" data-wa-q placeholder="ابحث بالاسم أو الرقم الجامعي" aria-label="بحث">
+      <button type="button" class="btn btn-ghost" data-wa-sort>ترتيب: المقعد ↑</button>
+      <button type="button" class="btn btn-primary" data-wa-csv>تصدير CSV</button>
+      <a class="btn btn-gold" data-wa-xlsx target="_blank" rel="noopener">تحميل Excel</a>
+      <a class="btn btn-ghost" data-wa-sheet target="_blank" rel="noopener">فتح الجدول</a>
+    </div>
+    <div class="wa-table-wrap">
+      <table class="wa-table">
+        <thead><tr><th>المقعد</th><th>الاسم الكامل</th><th>الرقم الجامعي</th><th>الهاتف</th><th>البريد الإلكتروني</th><th>التخصص</th><th>تاريخ التسجيل</th></tr></thead>
+        <tbody data-wa-body></tbody>
+      </table>
+    </div>
+    <p class="wa-empty" data-wa-empty hidden></p>
+  </section>
+
   <footer class="footer">
     <p>يوم ريادة الأعمال · كلية البريمي الجامعية – سلطنة عُمان</p>
   </footer>
@@ -521,11 +693,12 @@ body.print-mode .print-view { display: block; padding: 24px; }
   const openedAt = {};
 
   // ---------- التنقل بين الشاشات (مع دعم زر الرجوع في المتصفح) ----------
-  const ROUTES = { '': 'home', '#attend': 'attend', '#project': 'project', '#done': 'success' };
+  const ROUTES = { '': 'home', '#attend': 'attend', '#project': 'project', '#workshop': 'workshop', '#done': 'success' };
   function show(name, { push = true } = {}) {
     if (name === 'success' && !lastSuccess) name = 'home';
+    if (name === 'ws-success' && !lastWs) name = 'home';
     views.forEach((v) => v.classList.toggle('is-active', v.dataset.view === name));
-    if (name === 'attend' || name === 'project') openedAt[name] = openedAt[name] || Date.now();
+    if (name === 'attend' || name === 'project' || name === 'workshop') openedAt[name] = openedAt[name] || Date.now();
     if (name === 'project') setStep(1, false);
     window.scrollTo(0, 0);
     const first = $(`.view[data-view="${name}"] input:not([type=radio]):not([name=website])`);
@@ -557,7 +730,8 @@ body.print-mode .print-view { display: block; padding: 24px; }
   const RULES = {
     full_name: (v) => (v.trim().length < 3 ? 'يرجى كتابة الاسم الكامل' : ''),
     phone: (v) => (!v.trim() ? 'يرجى إدخال رقم الهاتف' : !validPhone(v) ? 'رقم الهاتف غير صحيح (مثال: 9XXXXXXX)' : ''),
-    email: (v) => (v.trim() && !validEmail(v.trim()) ? 'البريد الإلكتروني غير صحيح' : ''),
+    email: (v) => (!v.trim() ? 'يرجى كتابة البريد الإلكتروني' : !validEmail(v.trim()) ? 'البريد الإلكتروني غير صحيح' : ''),
+    major: () => '',
     attendee_role: (v) => (!v ? 'يرجى اختيار الصفة' : ''),
     project_name: (v) => (v.trim().length < 2 ? 'يرجى كتابة اسم المشروع' : ''),
     project_type: (v) => (!v ? 'يرجى اختيار نوع المشاركة' : ''),
@@ -657,15 +831,19 @@ body.print-mode .print-view { display: block; padding: 24px; }
 
   // ---------- الإرسال ----------
   let lastSuccess = null;
+  let lastWs = null;
+  const WS_TITLE = 'من الفكرة إلى الشركة الناشئة: كيف تبني مشروعك الطلابي باستخدام الذكاء الاصطناعي؟';
   const FIELDS = {
     attendee: ['full_name', 'phone', 'email', 'attendee_role'],
     project: ['full_name', 'phone', 'student_id', 'project_name', 'project_type', 'description', 'instagram', 'wants_booth'],
+    workshop: ['full_name', 'student_id', 'phone', 'email', 'major'],
   };
 
   async function submit(form) {
     const type = form.dataset.type;
     const formErr = form.querySelector('.form-error');
     formErr.textContent = '';
+    formErr.classList.remove('is-info');
     if (type === 'project' && !checkFields(form, ['full_name', 'phone', 'student_id', 'project_name'])) { setStep(1, true); return; }
     if (!checkFields(form, FIELDS[type])) { form.classList.remove('shake'); void form.offsetWidth; form.classList.add('shake'); return; }
 
@@ -674,18 +852,27 @@ body.print-mode .print-view { display: block; padding: 24px; }
     btn.classList.add('is-loading');
     btn.disabled = true;
 
-    const payload = { type, website: form.elements.website.value, elapsed_ms: Date.now() - (openedAt[type === 'project' ? 'project' : 'attend'] || Date.now()) };
+    const payload = { type, website: form.elements.website.value, elapsed_ms: Date.now() - (openedAt[type === 'attendee' ? 'attend' : type] || Date.now()) };
     for (const n of FIELDS[type]) payload[n] = valueOf(form, n).trim();
 
     try {
       const res = await fetch(API_URL, { method: 'POST', body: JSON.stringify(payload) });
       const data = await res.json();
+      if (data && data.ok && type === 'workshop') {
+        lastWs = { ref: data.ref, name: payload.full_name };
+        form.reset();
+        $$('.phone', form).forEach((p) => p.classList.remove('intl'));
+        openedAt.workshop = 0;
+        renderWs();
+        show('ws-success');
+        return;
+      }
       if (data && data.ok) {
         lastSuccess = { type, ref: data.ref, project: payload.project_name || '', owner: payload.full_name || '' };
         form.reset();
         $$('.phone', form).forEach((p) => p.classList.remove('intl'));
         if (desc) $('[data-count]').textContent = '0';
-        openedAt[type === 'project' ? 'project' : 'attend'] = 0;
+        openedAt[type === 'attendee' ? 'attend' : type] = 0;
         renderSuccess();
         show('success');
         return;
@@ -693,6 +880,11 @@ body.print-mode .print-view { display: block; padding: 24px; }
       if (data && data.fields) {
         for (const [k, msg] of Object.entries(data.fields)) setError(form, k, msg);
         if (type === 'project' && ['full_name', 'phone', 'student_id', 'project_name'].some((k) => data.fields[k])) setStep(1, true);
+      }
+      if (type === 'workshop' && data && data.duplicate) {
+        formErr.classList.add('is-info');
+        formErr.textContent = data.error + (data.ref ? ' رقم مقعدك: ' + data.ref : '');
+        return;
       }
       formErr.textContent = (data && data.error) || 'تعذر إرسال الطلب، يرجى المحاولة مرة أخرى';
     } catch (e) {
@@ -843,10 +1035,80 @@ body.print-mode .print-view { display: block; padding: 24px; }
     c.replaceWith(c.cloneNode(true)); // إعادة تشغيل حركة علامة النجاح
   }
 
+  // ---------- الورشة: صفحة التأكيد ----------
+  function renderWs() {
+    const v = $('[data-view="ws-success"]');
+    $('[data-seat]', v).textContent = lastWs.ref;
+    $('[data-ws-name]', v).textContent = lastWs.name;
+    $('[data-copy-msg]', v).textContent = '';
+    const c = $('.check', v);
+    c.replaceWith(c.cloneNode(true));
+  }
+  function fallbackCopy(t) {
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    ta.remove();
+    return ok;
+  }
+  function copyText(t) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(t).then(() => true, () => fallbackCopy(t));
+    return Promise.resolve(fallbackCopy(t));
+  }
+  $('[data-copy-ws]').addEventListener('click', async () => {
+    if (!lastWs) return;
+    const t = ['تم تسجيلك بنجاح في الورشة!', 'رقم مقعدك: ' + lastWs.ref, 'الاسم: ' + lastWs.name, 'الورشة: ' + WS_TITLE,
+      'مقدم الورشة: محمد البادي', 'التاريخ: الثلاثاء 1 ديسمبر 2026', 'المكان: كلية البريمي الجامعية'].join('\n');
+    const ok = await copyText(t);
+    $('[data-copy-msg]').textContent = ok ? 'تم نسخ بيانات التأكيد ✓' : 'تعذر النسخ، يمكنك أخذ لقطة شاشة لهذه الصفحة.';
+  });
+
+  // ---------- لوحة تسجيلات الورشة ----------
+  function initWsAdmin(D) {
+    document.body.classList.add('ws-mode');
+    document.title = 'تسجيلات الورشة | يوم ريادة الأعمال';
+    const rows = D.rows.slice();
+    let asc = true;
+    const q = $('[data-wa-q]'), body = $('[data-wa-body]'), empty = $('[data-wa-empty]');
+    $('[data-wa-count]').textContent = rows.length;
+    if (D.xlsx) $('[data-wa-xlsx]').href = D.xlsx; else $('[data-wa-xlsx]').hidden = true;
+    $('[data-wa-sheet]').href = D.sheet;
+    const num = (s) => Number(String(s).replace(/[^0-9]/g, '')) || 0;
+    const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    function render() {
+      const t = toLatin(q.value).trim().toLowerCase();
+      const list = rows
+        .filter((r) => !t || r.name.toLowerCase().includes(t) || r.sid.toLowerCase().includes(t))
+        .sort((a, b) => (num(a.seat) - num(b.seat)) * (asc ? 1 : -1));
+      body.innerHTML = list.map((r) => `<tr><td class="wa-seat" dir="ltr">${esc(r.seat)}</td><td>${esc(r.name)}</td><td dir="ltr">${esc(r.sid)}</td><td dir="ltr">${esc(r.phone)}</td><td dir="ltr">${esc(r.email)}</td><td>${esc(r.major || '—')}</td><td dir="ltr">${esc(r.at)}</td></tr>`).join('');
+      empty.hidden = list.length > 0;
+      empty.textContent = rows.length ? 'لا توجد نتائج مطابقة.' : 'لا توجد تسجيلات بعد.';
+    }
+    q.addEventListener('input', render);
+    $('[data-wa-sort]').addEventListener('click', (e) => {
+      asc = !asc;
+      e.currentTarget.textContent = 'ترتيب: المقعد ' + (asc ? '↑' : '↓');
+      render();
+    });
+    $('[data-wa-csv]').addEventListener('click', () => {
+      const cell = (v) => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+      const head = ['رقم المقعد', 'الاسم الكامل', 'الرقم الجامعي', 'رقم الهاتف', 'البريد الإلكتروني', 'التخصص', 'تاريخ التسجيل'];
+      const lines = [head.map(cell).join(',')].concat(rows.slice().sort((a, b) => num(a.seat) - num(b.seat))
+        .map((r) => [r.seat, r.name, r.sid, r.phone, r.email, r.major, r.at].map(cell).join(',')));
+      const url = URL.createObjectURL(new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' }));
+      downloadDataUrl(url, 'تسجيلات-الورشة.csv');
+    });
+    render();
+  }
+
   $$('form.form').forEach((form) => form.addEventListener('submit', (e) => { e.preventDefault(); submit(form); }));
 
   // ---------- البداية ----------
-  if (Array.isArray(window.PRINT_DATA)) {
+  if (window.WS_DATA && Array.isArray(window.WS_DATA.rows)) {
+    initWsAdmin(window.WS_DATA);
+  } else if (Array.isArray(window.PRINT_DATA)) {
     document.body.classList.add('print-mode');
     const list = $('[data-print-list]');
     $('[data-print-count]').textContent = `(${window.PRINT_DATA.length})`;
