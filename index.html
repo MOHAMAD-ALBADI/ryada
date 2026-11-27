@@ -360,7 +360,7 @@ body.print-mode .print-view { display: block; padding: 24px; }
 .ws-ticket strong { font-size: 15px; color: var(--ink); line-height: 1.6; }
 .ws-admin { display: none; }
 body.ws-mode > *:not(.ws-admin) { display: none !important; }
-body.ws-mode .ws-admin { display: block; padding: 24px; max-width: 1240px; margin: 0 auto; }
+body.ws-mode .ws-admin { display: block; padding: 24px; width: 100%; max-width: 1240px; min-width: 0; margin: 0 auto; }
 .wa-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
 .wa-head h1 { margin: 0; font-size: 26px; color: var(--navy); }
 .wa-head p { margin: 2px 0 0; color: var(--muted); }
@@ -851,6 +851,10 @@ body.ws-mode .ws-admin { display: block; padding: 24px; max-width: 1240px; margi
     if (btn.classList.contains('is-loading')) return; // منع الإرسال المكرر
     btn.classList.add('is-loading');
     btn.disabled = true;
+    const slowT = setTimeout(() => {
+      formErr.classList.add('is-info');
+      formErr.textContent = 'جارٍ الإرسال… قد يستغرق الأمر حتى 20 ثانية، لا تغلق الصفحة.';
+    }, 4000);
 
     const payload = { type, website: form.elements.website.value, elapsed_ms: Date.now() - (openedAt[type === 'attendee' ? 'attend' : type] || Date.now()) };
     for (const n of FIELDS[type]) payload[n] = valueOf(form, n).trim();
@@ -881,15 +885,28 @@ body.ws-mode .ws-admin { display: block; padding: 24px; max-width: 1240px; margi
         for (const [k, msg] of Object.entries(data.fields)) setError(form, k, msg);
         if (type === 'project' && ['full_name', 'phone', 'student_id', 'project_name'].some((k) => data.fields[k])) setStep(1, true);
       }
+      if (type === 'project' && data && data.duplicate && data.ref) {
+        lastSuccess = { type, ref: data.ref, project: data.project || payload.project_name || '', owner: data.owner || payload.full_name || '', again: true };
+        form.reset();
+        $$('.phone', form).forEach((p) => p.classList.remove('intl'));
+        if (desc) $('[data-count]').textContent = '0';
+        openedAt.project = 0;
+        renderSuccess();
+        show('success');
+        return;
+      }
       if (type === 'workshop' && data && data.duplicate) {
         formErr.classList.add('is-info');
         formErr.textContent = data.error + (data.ref ? ' رقم مقعدك: ' + data.ref : '');
         return;
       }
+      formErr.classList.remove('is-info');
       formErr.textContent = (data && data.error) || 'تعذر إرسال الطلب، يرجى المحاولة مرة أخرى';
     } catch (e) {
+      formErr.classList.remove('is-info');
       formErr.textContent = 'تعذر الاتصال. تحقق من الإنترنت ثم حاول مرة أخرى.';
     } finally {
+      clearTimeout(slowT);
       btn.classList.remove('is-loading');
       btn.disabled = false;
     }
@@ -1025,6 +1042,7 @@ body.ws-mode .ws-admin { display: block; padding: 24px; max-width: 1240px; margi
   $('[data-download]').addEventListener('click', () => { if (cardUrl) downloadDataUrl(cardUrl, `بطاقة-طاولة-${lastSuccess.ref}.png`); });
 
   function renderSuccess() {
+    $('[data-view="success"] h2').textContent = lastSuccess.again ? 'أنت مسجّل مسبقًا ✓' : 'تم استلام تسجيلك بنجاح!';
     $('[data-ref]').textContent = lastSuccess.ref;
     $('.success-extra').hidden = lastSuccess.type !== 'project';
     cardUrl = null; $('[data-card]').removeAttribute('src');
